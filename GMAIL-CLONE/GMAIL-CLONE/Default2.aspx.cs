@@ -220,7 +220,7 @@ namespace GMAIL_CLONE
             {
                
 
-                Session["Img"] = x.Tables[0].Rows[0][3].ToString();
+                //Session["Img"] = x.Tables[0].Rows[0][3].ToString();
 
                 string myemail = null; // Initialize myemail with a default value (e.g., null)
 

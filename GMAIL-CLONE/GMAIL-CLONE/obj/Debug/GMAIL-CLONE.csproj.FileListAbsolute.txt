@@ -1,5 +1,3 @@
-D:\Vs-Project\GMAIL-CLONE\GMAIL-CLONE\obj\Debug\GMAIL-CLONE.csproj.AssemblyReference.cache
-D:\Vs-Project\GMAIL-CLONE\GMAIL-CLONE\obj\Debug\GMAIL-CLONE.csproj.CoreCompileInputs.cache
 D:\Vs-Project\GMAIL-CLONE\GMAIL-CLONE\bin\GMAIL-CLONE.dll.config
 D:\Vs-Project\GMAIL-CLONE\GMAIL-CLONE\bin\GMAIL-CLONE.dll
 D:\Vs-Project\GMAIL-CLONE\GMAIL-CLONE\bin\GMAIL-CLONE.pdb
@@ -68,6 +66,8 @@ D:\Vs-Project\GMAIL-CLONE\GMAIL-CLONE\bin\Newtonsoft.Json.xml
 D:\Vs-Project\GMAIL-CLONE\GMAIL-CLONE\bin\Antlr3.Runtime.pdb
 D:\Vs-Project\GMAIL-CLONE\GMAIL-CLONE\bin\Microsoft.AspNet.FriendlyUrls.xml
 D:\Vs-Project\GMAIL-CLONE\GMAIL-CLONE\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Vs-Project\GMAIL-CLONE\GMAIL-CLONE\obj\Debug\GMAIL-CLONE.csproj.AssemblyReference.cache
+D:\Vs-Project\GMAIL-CLONE\GMAIL-CLONE\obj\Debug\GMAIL-CLONE.csproj.CoreCompileInputs.cache
 D:\Vs-Project\GMAIL-CLONE\GMAIL-CLONE\obj\Debug\GMAIL-CLONE.csproj.CopyComplete
 D:\Vs-Project\GMAIL-CLONE\GMAIL-CLONE\obj\Debug\GMAIL-CLONE.dll
 D:\Vs-Project\GMAIL-CLONE\GMAIL-CLONE\obj\Debug\GMAIL-CLONE.pdb

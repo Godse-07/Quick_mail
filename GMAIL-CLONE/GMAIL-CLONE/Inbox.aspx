@@ -6,9 +6,12 @@
 <head runat="server">
     
       <title></title>
-     <link href="StyleSheet.css" type="text/css" rel="Stylesheet" />
-    <link href="StyleSheet2c.css" type="text/css" rel="Stylesheet" />
+   
     <link href="SettingsStyle.css" type="text/css" rel="Stylesheet" />
+    <link href="StyleSheet.css" type="text/css" rel="Stylesheet" />
+    <link href="StyleSheet2.css" type="text/css" rel="Stylesheet" />
+    <link href="StyleSheet3.css" type="text/css" rel="Stylesheet" />
+    <%--<link href="SettingsStyle.css" type="text/css" rel="Stylesheet" />--%>
      <style type="text/css">
 
  #aboxr
@@ -387,7 +390,7 @@
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("to_imgurl") %>' Width="100" Height="100" />
             </ItemTemplate>
         </asp:TemplateField>
-        <asp:BoundField DataField="to_email" HeaderText="To Email" />
+        <asp:BoundField DataField="my_email" HeaderText="Email id" />
         <asp:BoundField DataField="title" HeaderText="Title" />
         <asp:BoundField DataField="dt" HeaderText="Date" />
     </Columns>
@@ -409,42 +412,35 @@
     </div>
 
 
-    <!---Layer---------->
-        <%--<div id="layerc1" runat="server"></div>
+   <!---Layer---------->
+ <div id="layerc1" runat="server"></div>
    <div id="outerc1" runat="server">
     <div id="Div1" runat="server">
-       <a id="ImageButton5" href="Draft.aspx"><img alt="cancel" src="cancel.png" height="20px" width="20px" /></a>
+       <a id="ImageButton5" href="sent-page.aspx"><img alt="cancel" height="20px" width="20px" /></a>
     </div>
     <div id="L" runat="server">
         <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label></div>
    <div id="innerc1" runat="server">
      To:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label><br /><br />From:&nbsp;
-       
-<asp:Label ID="Label7" runat="server" Text="Label"></asp:Label><br /><br />Title:&nbsp;&nbsp;&nbsp;
+       <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label><br /><br />Title:&nbsp;&nbsp;&nbsp;
        <asp:Label ID="Label11" runat="server" Text="Label"></asp:Label><br /><br />Content:<br />
-       &nbsp; <asp:TextBox ID="TextBox5" runat="server" ReadOnly="true" 
-           CssClass="Txtb" TextMode="MultiLine" Width="250px" Height="150px" 
-          ></asp:TextBox><br /><br />
+       &nbsp; <asp:TextBox ID="TextBox5" runat="server" ReadOnly="true" CssClass="Txtb" TextMode="MultiLine" Width="250px" Height="150px"></asp:TextBox><br /><br />
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# ("att_url") %>'>Attachments</asp:HyperLink>
-       <asp:Button ID="Button2" runat="server" Text="Send Now" 
-            />
-       <asp:Label ID="Label12" runat="server" Text="Label"></asp:Label>
    </div>
    </div>
     <!---layer for settings--->
-        <div id="layers" runat="server"></div>
+       <div id="layers" runat="server"></div>
         <div id="outers" runat="server">
-        <div id="Div2" runat="server">
-       <a id="A1" href="Draft.aspx"><img alt="cancel" src="cancel.png" height="20px" width="20px" /></a>
-    </div>
+        <div id="x2" runat="server">
+       &nbsp;</div>
         <div id="inners" runat="server">
         <div id="t" runat="server">
         <table id="t1" cellspacing="4" cellpadding="4" runat="server">
         
             <tr><td>Password:</td>
             <td>
-                <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox></td></tr>
+                <asp:TextBox ID="TextBox8" runat="server" ></asp:TextBox></td></tr>
                 <tr>
                 <td>Phone:</td>
                 <td>
@@ -458,13 +454,12 @@
             </table>
             <asp:FileUpload ID="FileUpload2" runat="server" /><br /><br />
             <div id="b">
-                <asp:Button ID="Button3" runat="server" Text="Save changes" 
-                     />
+                <asp:Button ID="Button3" runat="server" Text="Save changes"  />
             </div><br /><br />
              <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
             </div>
         </div>
-        </div>--%>
+        </div>
         
 
         

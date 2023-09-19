@@ -132,6 +132,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Inbox.aspx" />
+    <Content Include="inboxcontent.aspx" />
     <Content Include="log-in.aspx" />
     <Content Include="login-css.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -255,6 +256,13 @@
     </Compile>
     <Compile Include="Inbox.aspx.designer.cs">
       <DependentUpon>Inbox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inboxcontent.aspx.cs">
+      <DependentUpon>inboxcontent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inboxcontent.aspx.designer.cs">
+      <DependentUpon>inboxcontent.aspx</DependentUpon>
     </Compile>
     <Compile Include="log-in.aspx.cs">
       <DependentUpon>log-in.aspx</DependentUpon>
