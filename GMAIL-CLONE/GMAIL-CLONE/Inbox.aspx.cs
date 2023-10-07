@@ -103,7 +103,7 @@ namespace GMAIL_CLONE
                          Label11.Text = Session["title"].ToString();
                          TextBox5.Text = Session["body"].ToString();
                          HyperLink1.NavigateUrl = Session["att_url"].ToString();
-                         Response.Redirect("~/inbox.aspx?"+Session["msg_id"].ToString());
+                         Response.Redirect("~/inboxcontent.aspx?"+Session["msg_id"].ToString());
                      }
                  }
                  else

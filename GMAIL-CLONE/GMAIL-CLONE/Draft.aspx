@@ -407,7 +407,7 @@
           </asp:GridView>
     </div>
     <!---Layer---------->
-   <%--<div id="layerc1" runat="server"></div>
+   <div id="layerc1" runat="server"></div>
    <div id="outerc1" runat="server">
     <div id="Div1" runat="server">
        <a id="ImageButton5" href="Draft.aspx"><img alt="cancel" src="cancel.png" height="20px" width="20px" /></a>
@@ -461,7 +461,7 @@
              <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
             </div>
         </div>
-        </div>--%>
+        </div>
 
     </form>
 </body>

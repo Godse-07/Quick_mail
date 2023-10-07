@@ -5,7 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-     <link href="StyleSheet2.css" type="text/css" rel="Stylesheet" />
+
+     <link href="SettingsStyle.css" type="text/css" rel="Stylesheet" />
+    <link href="StyleSheet.css" type="text/css" rel="Stylesheet" />
+    <link href="StyleSheet2.css" type="text/css" rel="Stylesheet" />
+    <link href="StyleSheet3.css" type="text/css" rel="Stylesheet" />
     <link href="a.css" type="test/css" rel="a" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -468,7 +472,7 @@
     </div>
 
         
-       <%-- <!---layer for settings--->
+        <!---layer for settings--->
         <div id="layers" runat="server"></div>
         <div id="outers" runat="server">
         <div id="x" runat="server">
@@ -493,12 +497,12 @@
             </table>
             <asp:FileUpload ID="FileUpload2" runat="server" /><br /><br />
             <div id="b">
-                <asp:Button ID="Button3" runat="server" />
+                <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" />
             </div><br /><br />
              <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
             </div>
         </div>
-        </div>--%>
+        </div>
     </form>
 </body>
 </html>

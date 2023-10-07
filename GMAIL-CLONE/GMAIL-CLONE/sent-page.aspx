@@ -5,9 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+     <link href="SettingsStyle.css" type="text/css" rel="Stylesheet" />
     <link href="StyleSheet.css" type="text/css" rel="Stylesheet" />
-    <link href="StyleSheet2c.css" type="text/css" rel="Stylesheet" />
-    <link href="SettingsStyle.css" type="text/css" rel="Stylesheet" />
+    <link href="StyleSheet2.css" type="text/css" rel="Stylesheet" />
+    <link href="StyleSheet3.css" type="text/css" rel="Stylesheet" />
      <style type="text/css">
 
  #aboxr
@@ -418,7 +419,7 @@
         </asp:GridView>
     </div>
     <!---Layer---------->
-   <!--<div id="layerc1" runat="server"></div>
+   <div id="layerc1" runat="server"></div>
    <div id="outerc1" runat="server">
     <div id="Div1" runat="server">
        <a id="ImageButton5" href="sent.aspx"><img alt="cancel" src="cancel.png" height="20px" width="20px" /></a>
@@ -433,10 +434,10 @@
        &nbsp; <asp:TextBox ID="TextBox5" runat="server" ReadOnly="true" CssClass="Txtb" TextMode="MultiLine" Width="250px" Height="150px"></asp:TextBox><br /><br />
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# ("att_url") %>'>Attachments</asp:HyperLink>
    </div>
-   </div>-->
+   </div>
     <!---layer for settings--->
       
-       <!-- <div id="inners" runat="server">
+        <div id="inners" runat="server">
         <div id="t" runat="server">
         <table id="t1" cellspacing="4" cellpadding="4" runat="server">
         
@@ -461,7 +462,7 @@
              <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
             </div>
         </div>
-        </div>-->
+        </div>
     </form>
 </body>
 </html>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -12,96 +13,73 @@ namespace GMAIL_CLONE
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataSet ds = Class1.fetch("select * from Draft ");//where to_email='" + Session["to_email"].ToString() + "'");
-            //Console.WriteLine("Test1");
-            if (ds.Tables[0].Rows.Count != 0)
+
+
+
+
+            layers.Visible = false;
+            outers.Visible = false;
+            inners.Visible = false;
+            if (Session["name"] != null && Session["name"].ToString() != "")
             {
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
-                //   Console.WriteLine("Test2");
-            }
 
 
+                Label2.Text = Session["email"].ToString();
 
-            //// Check if Session["name"] and Session["email"] are not null and not empty
-            //if (Session["name"] != null && !string.IsNullOrEmpty(Session["name"].ToString()) &&
-            //    Session["email"] != null && !string.IsNullOrEmpty(Session["email"].ToString()))
-            //{
-            //    // Set user details
-            //    Label1.Text = Session["name"].ToString();
-            //    Label2.Text = Session["email"].ToString() + "<br/>" + Session["mob"].ToString();
-            //    Image1.ImageUrl = Session["img"].ToString();
+                Image1.ImageUrl = Session["img"].ToString();
 
-            //    // Fetch messages for the current user (Session["email"])
-            //    DataSet ds = Class1.fetch("select * from Message where to_email='" + Session["to_email"].ToString() + "'");
-            //    Console.WriteLine("Test1");
-            //    if (ds.Tables[0].Rows.Count != 0)
-            //    {
-            //        GridView1.DataSource = ds;
-            //        GridView1.DataBind();
-            //        Console.WriteLine("Test2");
-            //    }
 
-            //    // Check if there is a "msg_id" parameter in the query string
-            //    if (Request.QueryString["msg_id"] != null)
-            //    {
-            //        // Fetch message details based on the "msgid"
-            //        DataSet x = Class1.fetch("select * from Message where msg_id='" + Request.QueryString["msg_id"] + "'");
-            //        if (x.Tables[0].Rows.Count != 0)
-            //        {
-            //            // Store message details in session variables for use in the content page
-            //           // Session["msg_id"] = x.Tables[0].Rows[0][0].ToString();
-            //           // Session["to_email"] = x.Tables[0].Rows[0][1].ToString();
-            //           // Session["my_email"] = x.Tables[0].Rows[0][2].ToString();
-            //           // Session["to_imgurl"] = x.Tables[0].Rows[0][3].ToString();
-            //           // Session["my_imgurl"] = x.Tables[0].Rows[0][4].ToString();
-            //           // Session["cc_email"] = x.Tables[0].Rows[0][5].ToString();
-            //           // Session["title"] = x.Tables[0].Rows[0][6].ToString();
-            //           // Session["body"] = x.Tables[0].Rows[0][7].ToString();
-            //           // Session["att_url"] = x.Tables[0].Rows[0][8].ToString();
-            //           // Session["dt"] = x.Tables[0].Rows[0][9].ToString();
-
-            //            // Display message details in the content layer
-            //            //layerc.Visible = true;
-            //            //outerc.Visible = true;
-            //            //innerc.Visible = true;
-            //            //Label3.Text = Session["dt"].ToString();
-            //            //Label5.Text = Session["myemail"].ToString();
-            //            //Label6.Text = Session["toemail"].ToString();
-            //            //Label11.Text = Session["title"].ToString();
-            //            //TextBox5.Text = Session["body"].ToString();
-            //            //HyperLink1.NavigateUrl = Session["atturl"].ToString();
-            //            //  Response.Redirect("~/inboxcontent.aspx?"+Session["msgid"].ToString());
-            //        }
-            //    }
-            //    else
-            //    {
-            //        // Hide the content layer when there is no "msgid" in the query string
-            //        //layerc.Visible = false;
-            //        //outerc.Visible = false;
-            //        //innerc.Visible = false;
-            //    }
-            //}
-            //else
-            //{
-            //    //        // Handle the case where Session["name"], Session["email"], or both are null or empty.
-            //    //        // You can redirect the user to the login page or display an error message.
-            //    //        // For example:
-            //     //Response.Redirect("~/Default.aspx");
-            //}
-
-            if (Session["Name"] != null && Session["Name"].ToString() != "")
-            {
-                Label2.Text = Session["Email"].ToString();
-
-                //Label2.Text = Session["Email"].ToString(); //+ "<br/>" + Session["mob"].ToString();
-
-                Image1.ImageUrl = Session["Img"].ToString();
             }
             else
             {
                 Response.Redirect("~/Default.aspx");
             }
+            DataSet ds = Class1.fetch("select * from Draft where my_email='" + Session["email"].ToString() + "'");
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                GridView1.DataSource = ds;
+                GridView1.DataBind();
+            }
+            if (Request.QueryString["msgid"] != null)
+            {
+                DataSet x = Class1.fetch("select * from Draft where msg_id='" + Request.QueryString["msgid"] + "'");
+                if (x.Tables[0].Rows.Count != null)
+                {
+                    Session["msgid"] = x.Tables[0].Rows[0][0].ToString();
+                    Session["toemail"] = x.Tables[0].Rows[0][1].ToString();
+                    Session["myemail"] = x.Tables[0].Rows[0][2].ToString();
+                    Session["toimgurl"] = x.Tables[0].Rows[0][3].ToString();
+                    Session["myimgurl"] = x.Tables[0].Rows[0][4].ToString();
+                    Session["title"] = x.Tables[0].Rows[0][6].ToString();
+                    Session["body"] = x.Tables[0].Rows[0][7].ToString();
+                    Session["atturl"] = x.Tables[0].Rows[0][8].ToString();
+                    Session["dt"] = x.Tables[0].Rows[0][9].ToString();
+                    Session["cc"] = x.Tables[0].Rows[0][5].ToString();
+                    layerc1.Visible = true;
+                    outerc1.Visible = true;
+                    innerc1.Visible = true;
+                    Label4.Text = Session["dt"].ToString();
+                    Label6.Text = Session["toemail"].ToString();
+                    Label7.Text = Session["myemail"].ToString();
+                    Label11.Text = Session["title"].ToString();
+                    TextBox5.Text = Session["body"].ToString();
+                    HyperLink1.NavigateUrl = Session["atturl"].ToString();
+                }
+            }
+            else
+            {
+                layerc1.Visible = false;
+                outerc1.Visible = false;
+                innerc1.Visible = false;
+            }
+
+
+
+
+
+
+
+
 
 
 
