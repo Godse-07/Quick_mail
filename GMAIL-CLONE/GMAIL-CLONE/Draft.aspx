@@ -5,9 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-     <link href="StyleSheet.css" type="text/css" rel="Stylesheet" />
-    <link href="StyleSheet2c.css" type="text/css" rel="Stylesheet" />
-    <link href="SettingsStyle.css" type="text/css" rel="Stylesheet" />
+    <link href="StyleSheet.css" type="text/css" rel="Stylesheet" />
+     <link href="StyleSheet3.css" type="text/css" rel="Stylesheet" />
+     <link href="SettingsStyle.css" type="text/css" rel="Stylesheet" />
      <style type="text/css">
 
  #aboxr
@@ -417,15 +417,14 @@
    <div id="innerc1" runat="server">
      To:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label><br /><br />From:&nbsp;
-       
-<asp:Label ID="Label7" runat="server" Text="Label"></asp:Label><br /><br />Title:&nbsp;&nbsp;&nbsp;
+       <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label><br /><br />Title:&nbsp;&nbsp;&nbsp;
        <asp:Label ID="Label11" runat="server" Text="Label"></asp:Label><br /><br />Content:<br />
        &nbsp; <asp:TextBox ID="TextBox5" runat="server" ReadOnly="true" 
            CssClass="Txtb" TextMode="MultiLine" Width="250px" Height="150px" 
           ></asp:TextBox><br /><br />
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# ("att_url") %>'>Attachments</asp:HyperLink>
        <asp:Button ID="Button2" runat="server" Text="Send Now" 
-            />
+           onclick="Button2_Click" />
        <asp:Label ID="Label12" runat="server" Text="Label"></asp:Label>
    </div>
    </div>
@@ -442,11 +441,7 @@
             <tr><td>Password:</td>
             <td>
                 <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox></td></tr>
-                <tr>
-                <td>Phone:</td>
-                <td>
-                    <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox></td>
-                </tr>
+                 
                 <tr>
                 <td>Photo:</td>
                 <td>
@@ -456,7 +451,7 @@
             <asp:FileUpload ID="FileUpload2" runat="server" /><br /><br />
             <div id="b">
                 <asp:Button ID="Button3" runat="server" Text="Save changes" 
-                     />
+                    onclick="Button3_Click" />
             </div><br /><br />
              <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
             </div>

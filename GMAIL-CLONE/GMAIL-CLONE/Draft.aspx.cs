@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Web;
@@ -114,6 +115,75 @@ namespace GMAIL_CLONE
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/log-in.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            DataSet x = Class1.fetch("select * from user_det where Email='" + Label6.Text + "'");
+            if (x.Tables[0].Rows.Count != 0)
+            {
+                //Session["email"] = x.Tables[0].Rows[0][3].ToString();
+                Session["img1"] = x.Tables[0].Rows[0][7].ToString();
+                if (Session["att_url"] != null)
+                {
+
+                    bool r = Class1.save("insert into msg(to_email,my_email,to_imgurl,my_imgurl,cc_email,title,body,att_url,dt) values('" + Label6.Text + "','" + Label7.Text + "','" + Session["toimgurl"].ToString() + "','" + Session["myimgurl"].ToString() + "','" + Session["cc"].ToString() + "','" + Label11.Text + "','" + TextBox5.Text + "','" + Session["atturl"].ToString() + "','" + System.DateTime.Now.ToLongDateString() + "')");
+                    if (r == true)
+                    {
+
+                        Label12.Text = "Mail has been sent successfully!";
+                    }
+                    else
+                    {
+                        Label12.Text = "Mail not sent";
+                    }
+                }
+
+            }
+            else
+            {
+                // string myemail = Session["email"].ToString();
+                bool r = Class1.save("insert into msg(to_email,my_email,to_imgurl,my_imgurl,cc_email,title,body,dt) values('" + Label6.Text + "','" + Label7.Text + "','" + Session["toimgurl"].ToString() + "','" + Session["myimgurl"].ToString() + "','" + Session["cc"].ToString() + "','" + Label11.Text + "','" + TextBox5.Text + "','" + System.DateTime.Now.ToLongDateString() + "')");
+                if (r == true)
+                {
+                    Label12.Text = "Mail has been sent successfully!";
+                }
+                else
+                {
+                    Label12.Text = "Mail not sent";
+                }
+            }
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            string filename = FileUpload2.FileName;
+            string ex = Path.GetExtension(filename);
+            if (ex == ".jpg" || ex == ".jpeg" || ex == ".png")
+            {
+                string imgurl = "~/emailpics/" + filename;
+                string imgurl1 = "~/pics/" + filename;
+
+                Image2.ImageUrl = imgurl.ToString();
+                bool r = Class1.save("update user1 set Password='" + TextBox8.Text + "',img='" + imgurl + "' where email='" + Session["email"].ToString() + "'");
+                bool s = Class1.save("update msg set my_imgurl='" + imgurl1 + "' where my_email='" + Session["email"].ToString() + "'");
+                bool t = Class1.save("update msg set to_imgurl='" + imgurl1 + "' where to_email='" + Session["email"].ToString() + "'");
+                if (r == true && s == true && t == true)
+                {
+                    layers.Visible = true;
+                    outers.Visible = true;
+                    inners.Visible = true;
+                    FileUpload2.PostedFile.SaveAs(Server.MapPath("~/emailpics/") + filename);
+                    FileUpload2.PostedFile.SaveAs(Server.MapPath("~/pics/") + filename);
+                    Label3.Text = "Changes saved successfully";
+                }
+                else
+                {
+                    TextBox8.Text = "";
+              
+                }
+
+            }
         }
     }
 }

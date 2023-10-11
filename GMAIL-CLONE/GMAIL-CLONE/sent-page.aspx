@@ -420,7 +420,7 @@
         </asp:GridView>
     </div>
     <!---Layer---------->
-   <div id="layerc1" runat="server"></div>
+  <div id="layerc1" runat="server"></div>
    <div id="outerc1" runat="server">
     <div id="Div1" runat="server">
        <a id="ImageButton5" href="sent.aspx"><img alt="cancel" src="cancel.png" height="20px" width="20px" /></a>
@@ -437,11 +437,10 @@
    </div>
    </div>
     <!---layer for settings--->
-      
-        <div id="layers" runat="server"></div>
+       <div id="layers" runat="server"></div>
         <div id="outers" runat="server">
-        <div id="Div2" runat="server">
-       <a id="A1" href="Draft.aspx"><img alt="cancel" src="cancel.png" height="20px" width="20px" /></a>
+        <div id="x2" runat="server">
+       <a id="ImageButton6" href="Sent.aspx"><img alt="cancel" src="cancel.png" height="20px" width="20px" /></a>
     </div>
         <div id="inners" runat="server">
         <div id="t" runat="server">
@@ -464,7 +463,7 @@
             <asp:FileUpload ID="FileUpload2" runat="server" /><br /><br />
             <div id="b">
                 <asp:Button ID="Button3" runat="server" Text="Save changes" 
-                     />
+                    onclick="Button3_Click" />
             </div><br /><br />
              <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
             </div>

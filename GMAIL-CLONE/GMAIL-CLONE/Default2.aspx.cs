@@ -72,7 +72,7 @@ namespace GMAIL_CLONE
 
         protected void dispImg()
         {
-            DataSet dx = Class1.fetch("select * from user_det where id!='" + Session["id"] + "'");
+            DataSet dx = Class1.fetch("select * from user_det where Name!='" + Session["Naame"] + "'");
             if (dx.Tables[0].Rows.Count != 0)
             {
                 //DataList1.DataSource = dx;

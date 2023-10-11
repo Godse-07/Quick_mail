@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Web;
@@ -107,41 +108,37 @@ namespace GMAIL_CLONE
 
 
 
-            layerc1.Visible = false;
-            outerc1.Visible = false;
-            innerc1.Visible = false;
-
+            layers.Visible = false;
+            outers.Visible = false;
+            inners.Visible = false;
             if (Session["name"] != null && Session["name"].ToString() != "")
             {
-                // User is logged in
+              
                 Label2.Text = Session["email"].ToString();
+
                 Image1.ImageUrl = Session["img"].ToString();
+                /* layerc1.Visible = false;
+                 outerc1.Visible = false;
+                 innerc1.Visible = false;*/
+
+
             }
             else
             {
-                // User is not logged in, redirect to the default page
                 Response.Redirect("~/Default.aspx");
             }
-
-            // Use parameterized queries to prevent SQL injection
-            string email = Session["email"].ToString();
-            DataSet ds = Class1.fetch("select * from Message where my_email=@email", new SqlParameter("@email", email));
-
+            DataSet ds = Class1.fetch("select * from Message where my_email='" + Session["email"].ToString() + "'");
             if (ds.Tables[0].Rows.Count != 0)
             {
-                // Bind the dataset to GridView1
                 GridView1.DataSource = ds;
                 GridView1.DataBind();
             }
-
             if (Request.QueryString["msgid"] != null)
             {
-                string msgId = Request.QueryString["msgid"];
-                DataSet x = Class1.fetch("select * from Message where msg_id=@msgId", new SqlParameter("@msgId", msgId));
-
-                if (x.Tables[0].Rows.Count != 0)
+                DataSet x = Class1.fetch("select * from Message where msg_id='" + Request.QueryString["msgid"] + "'");
+                if (x.Tables[0].Rows.Count != null)
                 {
-                    Session["msgid"] = x.Tables[0].Rows[0][0].ToString();
+                    Session["msg_id"] = x.Tables[0].Rows[0][0].ToString();
                     Session["to_email"] = x.Tables[0].Rows[0][1].ToString();
                     Session["my_email"] = x.Tables[0].Rows[0][2].ToString();
                     Session["to_imgurl"] = x.Tables[0].Rows[0][3].ToString();
@@ -150,8 +147,6 @@ namespace GMAIL_CLONE
                     Session["body"] = x.Tables[0].Rows[0][7].ToString();
                     Session["att_url"] = x.Tables[0].Rows[0][8].ToString();
                     Session["dt"] = x.Tables[0].Rows[0][9].ToString();
-
-                    // Show the necessary controls
                     layerc1.Visible = true;
                     outerc1.Visible = true;
                     innerc1.Visible = true;
@@ -162,18 +157,19 @@ namespace GMAIL_CLONE
                     TextBox5.Text = Session["body"].ToString();
                     HyperLink1.NavigateUrl = Session["att_url"].ToString();
                 }
-                else
-                {
-                    // Handle the case where the specified message ID is not found
-                }
             }
             else
             {
-                // Hide the controls when there's no message ID in the query string
                 layerc1.Visible = false;
                 outerc1.Visible = false;
                 innerc1.Visible = false;
             }
+            /*  else
+              {
+                  Response.Redirect("~/Default2.aspx");
+              }*/
+
+        
 
 
 
@@ -181,8 +177,7 @@ namespace GMAIL_CLONE
 
 
 
-
-        }
+    }
 
 
         protected void dispImg()
@@ -208,6 +203,36 @@ namespace GMAIL_CLONE
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/log-in.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            string filename = FileUpload2.FileName;
+            string ex = Path.GetExtension(filename);
+            if (ex == ".jpg" || ex == ".jpeg" || ex == ".png")
+            {
+                string imgurl = "~/emailpics/" + filename;
+                string imgurl1 = "~/pics/" + filename;
+
+                Image2.ImageUrl = imgurl.ToString();
+                bool r = Class1.save("update user1 set pwd='" + TextBox8.Text + "',mob='" + TextBox9.Text + "',img='" + imgurl + "' where email='" + Session["email"].ToString() + "'");
+                bool s = Class1.save("update msg set my_imgurl='" + imgurl1 + "' where my_email='" + Session["email"].ToString() + "'");
+                bool t = Class1.save("update msg set to_imgurl='" + imgurl1 + "' where to_email='" + Session["email"].ToString() + "'");
+                if (r == true && s == true && t == true)
+                {
+                    layers.Visible = true;
+                    outers.Visible = true;
+                    inners.Visible = true;
+                    FileUpload2.PostedFile.SaveAs(Server.MapPath("~/emailpics/") + filename);
+                    FileUpload2.PostedFile.SaveAs(Server.MapPath("~/pics/") + filename);
+                    Label5.Text = "Changes saved successfully";
+                }
+                else
+                {
+                    TextBox8.Text = "";
+                    TextBox9.Text = "";
+                }
+            }
         }
     }
 }
