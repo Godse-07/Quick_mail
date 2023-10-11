@@ -486,9 +486,8 @@
             <td class="style1">
                 <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox></td></tr>
                 <tr>
-                <td>Phone:</td>
-                <td>
-                    <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox></td>
+                
+               
                 </tr>
                 <tr>
                 <td>Photo:</td>
@@ -497,12 +496,22 @@
             </table>
             <asp:FileUpload ID="FileUpload2" runat="server" /><br /><br />
             <div id="b">
-                <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" />
+                <asp:Button ID="Button3" runat="server" OnClick="Button3_Click"  Text="Save Changes"/>
             </div><br /><br />
              <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
             </div>
         </div>
         </div>
+
+
+
+
+
+
+
+
+
+
     </form>
 </body>
 </html>

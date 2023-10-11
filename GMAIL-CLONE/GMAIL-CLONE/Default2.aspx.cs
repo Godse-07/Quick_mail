@@ -13,12 +13,12 @@ namespace GMAIL_CLONE
 {
     public partial class Default2 : System.Web.UI.Page
     {
-        //public string myemail;
+        public string myemail;
         protected void Page_Load(object sender, EventArgs e)
         {
-           
 
-           
+
+
 
             //layers.Visible = false;
             //outers.Visible = false;
@@ -52,6 +52,10 @@ namespace GMAIL_CLONE
             /* layers.Visible = false;
              outers.Visible = false;
              inners.Visible = false;*/
+
+            layers.Visible = false;
+            outers.Visible = false;
+            inners.Visible = false;
             if (Session["Name"] != null && Session["Name"].ToString() != "")
              {
                 Label1.Text = Session["Email"].ToString();
@@ -301,7 +305,36 @@ namespace GMAIL_CLONE
 
         protected void Button3_Click(object sender, EventArgs e)
         {
+            string filename = FileUpload2.FileName;
+            string ex = Path.GetExtension(filename);
+            if (ex == ".jpg" || ex == ".jpeg" || ex == ".png")
+            {
+                string imgurl = "~/emailpics/" + filename;
+                string imgurl1 = "~/pics/" + filename;
 
+                Image2.ImageUrl = imgurl.ToString();
+
+                Session["img"] = imgurl.ToString();
+                bool r = Class1.save("update user-det set pwd='" + "',img='" + imgurl + "' where email='" + Session["email"].ToString() + "'");
+                bool s = Class1.save("update msg set my_imgurl='" + imgurl1 + "' where my_email='" + Session["email"].ToString() + "'");
+                bool t = Class1.save("update msg set to_imgurl='" + imgurl1 + "' where to_email='" + Session["email"].ToString() + "'");
+                if (r == true && s == true && t == true)
+                {
+                    layers.Visible = true;
+                    outers.Visible = true;
+                    inners.Visible = true;
+                    FileUpload2.PostedFile.SaveAs(Server.MapPath("~/emailpics/") + filename);
+                    FileUpload2.PostedFile.SaveAs(Server.MapPath("~/pics/") + filename);
+                    string imgurl_n = "~/emailpics/" + filename;
+
+                }
+                else
+                {
+                    TextBox8.Text = "";
+                }
+
+            }
+            Response.Redirect("~/Default2.aspx?");
         }
     }
 }

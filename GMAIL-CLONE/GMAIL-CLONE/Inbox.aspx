@@ -412,35 +412,40 @@
     </div>
 
 
-   <!---Layer---------->
- <div id="layerc1" runat="server"></div>
-   <div id="outerc1" runat="server">
+
+<!---Layer---------->
+    <div id="layerc" runat="server"></div>
+    <div id="outerc" runat="server">
     <div id="Div1" runat="server">
-       <a id="ImageButton5" href="sent-page.aspx"><img alt="cancel" height="20px" width="20px" /></a>
+       <a id="ImageButton5" href="inbox.aspx"><img alt="cancel" src="cancel.png" height="20px" width="20px" /></a>
     </div>
     <div id="L" runat="server">
-        <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label></div>
-   <div id="innerc1" runat="server">
-     To:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label><br /><br />From:&nbsp;
-       <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label><br /><br />Title:&nbsp;&nbsp;&nbsp;
-       <asp:Label ID="Label11" runat="server" Text="Label"></asp:Label><br /><br />Content:<br />
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></div>
+    <div id="innerc" runat="server">
+     From:
+        <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label><br /><br />&nbsp;&nbsp;&nbsp;
+     To:
+        <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label><br /><br />&nbsp
+    Title:
+        <asp:Label ID="Label11" runat="server" Text="Label"></asp:Label><br /><br />&nbsp
+        Content:<br />
        &nbsp; <asp:TextBox ID="TextBox5" runat="server" ReadOnly="true" CssClass="Txtb" TextMode="MultiLine" Width="250px" Height="150px"></asp:TextBox><br /><br />
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# ("att_url") %>'>Attachments</asp:HyperLink>
-   </div>
-   </div>
-    <!---layer for settings--->
+    </div>
+    </div>
+     <!---layer for settings--->
        <div id="layers" runat="server"></div>
         <div id="outers" runat="server">
-        <div id="x2" runat="server">
-       &nbsp;</div>
+        <div id="x1" runat="server">
+       <a id="ImageButton6" href="inbox.aspx"><img alt="cancel" src="cancel.png" height="20px" width="20px" /></a>
+    </div>
         <div id="inners" runat="server">
         <div id="t" runat="server">
         <table id="t1" cellspacing="4" cellpadding="4" runat="server">
         
             <tr><td>Password:</td>
             <td>
-                <asp:TextBox ID="TextBox8" runat="server" ></asp:TextBox></td></tr>
+                <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox></td></tr>
                 <tr>
                 <td>Phone:</td>
                 <td>
@@ -454,9 +459,10 @@
             </table>
             <asp:FileUpload ID="FileUpload2" runat="server" /><br /><br />
             <div id="b">
-                <asp:Button ID="Button3" runat="server" Text="Save changes"  />
+                <asp:Button ID="Button3" runat="server" Text="Save changes" 
+                    onclick="Button3_Click" />
             </div><br /><br />
-             <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
+             <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
             </div>
         </div>
         </div>

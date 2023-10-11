@@ -9,6 +9,7 @@
     <link href="StyleSheet.css" type="text/css" rel="Stylesheet" />
     <link href="StyleSheet2.css" type="text/css" rel="Stylesheet" />
     <link href="StyleSheet3.css" type="text/css" rel="Stylesheet" />
+    <%--<link href="SettingsStyle.css" type="text/css" rel="Stylesheet" />--%>
      <style type="text/css">
 
  #aboxr
@@ -437,6 +438,11 @@
    </div>
     <!---layer for settings--->
       
+        <div id="layers" runat="server"></div>
+        <div id="outers" runat="server">
+        <div id="Div2" runat="server">
+       <a id="A1" href="Draft.aspx"><img alt="cancel" src="cancel.png" height="20px" width="20px" /></a>
+    </div>
         <div id="inners" runat="server">
         <div id="t" runat="server">
         <table id="t1" cellspacing="4" cellpadding="4" runat="server">
@@ -457,12 +463,17 @@
             </table>
             <asp:FileUpload ID="FileUpload2" runat="server" /><br /><br />
             <div id="b">
-                <asp:Button ID="Button3" runat="server" Text="Save changes"/>
+                <asp:Button ID="Button3" runat="server" Text="Save changes" 
+                     />
             </div><br /><br />
              <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
             </div>
         </div>
         </div>
+
+
+
+
     </form>
 </body>
 </html>

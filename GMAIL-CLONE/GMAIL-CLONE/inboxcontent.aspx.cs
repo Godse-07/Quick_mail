@@ -56,5 +56,20 @@ namespace GMAIL_CLONE
             Session.Abandon();
             Response.Redirect("~/log-in.aspx");
         }
+
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("~/sent-page.aspx");
+        }
+
+        protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("~/Draft.aspx");
+        }
+
+        protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("~/Settings.aspx");
+        }
     }
 }

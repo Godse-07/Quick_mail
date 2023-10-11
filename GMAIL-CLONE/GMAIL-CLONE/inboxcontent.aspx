@@ -265,24 +265,24 @@
         <table id="tab" cellspacing="3" cellpadding="3">
         <tr>
         <td>
-         <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Inbox.png" 
+         <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="mail_inbox.png" 
                 Height="50px" Width="60px" onclick="ImageButton1_Click"/><br />
            &nbsp;&nbsp; <asp:Label ID="Label7" runat="server" Text="Inbox"></asp:Label>
             </td>
             <td>
-                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/send_mail.png" 
-                    Height="50px" Width="60px" onclick="ImageButton2_Click"/><br />
+                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="mail-sent.png" 
+                    Height="50px" Width="60px" OnClick="ImageButton2_Click" /><br />
                 <asp:Label ID="Label8" runat="server" Text="Sent Items"></asp:Label>
             </td>
            <td>
-               <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/mail_write.png" 
-                   Height="50px" Width="60px" onclick="ImageButton3_Click"/><br />
+               <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="mail-draft.png"
+                   Height="50px" Width="60px" OnClick="ImageButton3_Click" /><br />
                &nbsp;&nbsp;
                <asp:Label ID="Label9" runat="server" Text="Drafts"></asp:Label>
            </td> 
            <td>
-               <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/settings.png" 
-                   Height="50px" Width="60px" onclick="ImageButton4_Click"/><br />
+               <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="mail-setting.png" 
+                   Height="50px" Width="60px" OnClick="ImageButton4_Click" /><br />
                &nbsp;
                <asp:Label ID="Label10" runat="server" Text="Settings"></asp:Label>
            </td>
