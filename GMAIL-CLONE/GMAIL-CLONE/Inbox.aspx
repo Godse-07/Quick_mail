@@ -14,6 +14,8 @@
     <%--<link href="SettingsStyle.css" type="text/css" rel="Stylesheet" />--%>
      <style type="text/css">
 
+
+
  #aboxr
      {
          width:300px;
@@ -299,6 +301,11 @@
         float:right;   
         }
      </style>
+
+
+
+
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -412,8 +419,8 @@
     </div>
 
 
+<!--
 
-<!---Layer---------->
     <div id="layerc" runat="server"></div>
     <div id="outerc" runat="server">
     <div id="Div1" runat="server">
@@ -433,7 +440,7 @@
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# ("att_url") %>'>Attachments</asp:HyperLink>
     </div>
     </div>
-     <!---layer for settings--->
+     <!---layer for settings-
        <div id="layers" runat="server"></div>
         <div id="outers" runat="server">
         <div id="x1" runat="server">
@@ -465,7 +472,7 @@
              <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
             </div>
         </div>
-        </div>
+        </div>-->
         
 
         

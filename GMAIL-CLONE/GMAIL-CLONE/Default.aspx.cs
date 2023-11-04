@@ -22,7 +22,7 @@ namespace Gmail_clone
       
             if (FileUpload1.HasFile == true)
             {
-                Response.Write("<script>alert('" + "enter in if" + "') </Script>");
+              //  Response.Write("<script>alert('" + "enter in if" + "') </Script>");
                 string filename = FileUpload1.FileName;
                 string size = FileUpload1.PostedFile.ContentLength.ToString();
                 string ex = Path.GetExtension(filename);

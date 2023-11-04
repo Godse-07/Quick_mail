@@ -234,5 +234,10 @@ namespace GMAIL_CLONE
                 }
             }
         }
+
+        protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("~/Setting-Pushan.aspx");
+        }
     }
 }

@@ -18,41 +18,6 @@ namespace GMAIL_CLONE
         {
 
 
-
-
-            //layers.Visible = false;
-            //outers.Visible = false;
-            //inners.Visible = false;
-            //if (Session["name"] != null && Session["name"].ToString() != "")
-            //{
-            //    Label1.Text = Session["name"].ToString();
-
-            //    Label2.Text = Session["email"].ToString() + "<br/>" + Session["mob"].ToString();
-
-
-
-
-
-            //    Image1.ImageUrl = Session["img"].ToString();
-            //}
-            //else
-            //{
-            //    Response.Redirect("~/Default.aspx");
-            //}
-
-            //if (!IsPostBack)
-            //{
-            //    dispImg();
-
-            //    TextBox5.AutoPostBack = true;
-
-            //    //loadchat();
-            //}
-
-            /* layers.Visible = false;
-             outers.Visible = false;
-             inners.Visible = false;*/
-
             layers.Visible = false;
             outers.Visible = false;
             inners.Visible = false;
@@ -60,7 +25,7 @@ namespace GMAIL_CLONE
              {
                 Label1.Text = Session["Email"].ToString();
 
-                //Label2.Text = Session["Email"].ToString(); //+ "<br/>" + Session["mob"].ToString();
+           
 
                 Image1.ImageUrl = Session["Img"].ToString();
             }
@@ -75,15 +40,15 @@ namespace GMAIL_CLONE
             DataSet dx = Class1.fetch("select * from user_det where Name!='" + Session["Naame"] + "'");
             if (dx.Tables[0].Rows.Count != 0)
             {
-                //DataList1.DataSource = dx;
-                //DataList1.DataBind();
+                DataList1.DataSource = dx;
+                DataList1.DataBind();
             }
         }
 
 
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
-        {
+        { 
             Response.Redirect("~/Inbox.aspx");
         }
 
@@ -120,15 +85,13 @@ namespace GMAIL_CLONE
                 }
                 else
                 {
-                    // Handle the case where Session["my_email"] is null or not set
-                    // You can log an error, display a message to the user, or take appropriate action.
-                    // For now, I'll just display an error message.
+                    
                     Response.Write("<script>alert('Session[\"my_email\"] is null or not set.')</script>");
-                    return; // Exit the method since myemail is not set
+                    return; 
                 }
 
                 DataSet p = Class1.fetch("select max(msg_id) from Draft");
-                int msgId = 1; // Default value if there are no records in the Draft table
+                int msgId = 1; 
 
                 if (p.Tables[0].Rows.Count != 0 && !p.Tables[0].Rows[0].IsNull(0))
                 {
@@ -335,6 +298,16 @@ namespace GMAIL_CLONE
 
             }
             Response.Redirect("~/Default2.aspx?");
+        }
+
+        protected void ImageButton6_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("~/chat.aspx?" + Session["name"].ToString());
+        }
+
+        protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("~/Setting-Pushan.aspx");
         }
     }
 }

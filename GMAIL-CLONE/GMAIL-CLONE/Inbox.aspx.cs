@@ -291,7 +291,7 @@ namespace GMAIL_CLONE
 
         protected void ImageButton4_Click1(object sender, ImageClickEventArgs e)
         {
-            
+            Response.Redirect("~/Setting-Pushan.aspx");
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

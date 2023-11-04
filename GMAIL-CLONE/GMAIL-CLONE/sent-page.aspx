@@ -378,7 +378,7 @@
            </td> 
            <td>
                <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="mail-setting.png" 
-                   Height="50px" Width="60px" /><br />
+                   Height="50px" Width="60px" OnClick="ImageButton4_Click" /><br />
                &nbsp;
                <asp:Label ID="Label10" runat="server" Text="Settings"></asp:Label>
            </td>

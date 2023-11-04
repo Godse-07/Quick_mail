@@ -6,11 +6,8 @@
 <head runat="server">
     <title></title>
 
+     <link href="StyleSheet.css" type="text/css" rel="Stylesheet" />
      <link href="SettingsStyle.css" type="text/css" rel="Stylesheet" />
-    <link href="StyleSheet.css" type="text/css" rel="Stylesheet" />
-    <link href="StyleSheet2.css" type="text/css" rel="Stylesheet" />
-    <link href="StyleSheet3.css" type="text/css" rel="Stylesheet" />
-    <link href="a.css" type="test/css" rel="a" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
      <style type="text/css">
@@ -417,7 +414,7 @@
            </td> 
            <td>
               <asp:ImageButton ID="ImageButton4" runat="server"  
-                   Height="50px" Width="60px" src="mail-setting.png"/><br />
+                   Height="50px" Width="60px" src="mail-setting.png" OnClick="ImageButton4_Click"/><br />
                &nbsp;
                <asp:Label ID="Label7" runat="server" Text="Setting"></asp:Label>
            </td>
@@ -470,6 +467,19 @@
         </tr>
         </table>
     </div>
+
+
+       <!-- <div id="chat3" style="background-color:GRAY;">
+            <asp:ImageButton ID="ImageButton6" runat="server" Height="64px" 
+                ImageUrl="~\chat.png" onclick="ImageButton6_Click" Width="71px" />
+            <asp:DataList ID="DataList1" runat="server" RepeatColumns="4">
+                <ItemTemplate>
+                <a href='<%# "Default2.aspx?toid="+Eval("id") %>'>
+                    <asp:Image ID="Image3" runat="server" Width="30" Height="25" ImageUrl='<%# Eval("img") %>' />
+                    </a>
+                </ItemTemplate>
+            </asp:DataList>
+        </div>-->
 
         
         <!---layer for settings--->
