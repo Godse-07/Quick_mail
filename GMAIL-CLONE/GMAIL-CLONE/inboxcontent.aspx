@@ -212,7 +212,17 @@
         border-radius:20px;
         opacity:0.7;
        }
-     
+      #content {
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 50px; /* Adjust the top margin as needed */
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left; /* Adjust text alignment if needed */
+        }
          </style>
 </head>
 <body>
@@ -292,9 +302,27 @@
         </div>
         </div>
     </div>
-   <div id="boxi">
-   <div id="i1"></div>
-   </div>
+   
+        <div id="content">
+            <div>
+                <h2>Title:</h2>
+                <asp:Label ID="lblTitle" runat="server" CssClass="xb1"></asp:Label>
+            </div>
+            <div>
+                <h2>Body:</h2>
+                <asp:Label ID="lblBody" runat="server" CssClass="xb1"></asp:Label>
+            </div>
+            <div>
+                <h2>Date:</h2>
+                <asp:Label ID="lblDate" runat="server" CssClass="xb1"></asp:Label>
+            </div>
+            <div>
+                <h2>Attachment URL:</h2>
+                <asp:HyperLink ID="hlAttachment" runat="server" CssClass="xb1"></asp:HyperLink>
+            </div>
+        </div>
+
+
     </form>
     
 </body>

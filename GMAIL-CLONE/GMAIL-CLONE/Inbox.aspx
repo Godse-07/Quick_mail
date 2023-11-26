@@ -386,7 +386,12 @@
         </div>
     </div>
     
-    <div id="x">
+   
+        
+        
+
+          
+          <div id="x">
          <asp:GridView ID="GridView1" runat="server" Width="90%" margin-left="auto" margin-right="auto"
             CellPadding="4" ForeColor="#333333" GridLines="None" CssClass="grid" AutoGenerateColumns="false">
             
@@ -398,9 +403,17 @@
             </ItemTemplate>
         </asp:TemplateField>
         <asp:BoundField DataField="my_email" HeaderText="Email id" />
-        <asp:BoundField DataField="title" HeaderText="Title" />
+        
+                 <asp:TemplateField HeaderText="Title">
+            <ItemTemplate>
+                <asp:HyperLink ID="TitleLink" runat="server" Text='<%# Eval("title") %>'
+                    NavigateUrl='<%# "inboxcontent.aspx?title=" + Server.UrlEncode(Eval("title").ToString()) %>' />
+            </ItemTemplate>
+        </asp:TemplateField>
+
         <asp:BoundField DataField="dt" HeaderText="Date" />
     </Columns>
+
             
              
             
@@ -417,6 +430,9 @@
              <AlternatingRowStyle BackColor="White" /> 
          </asp:GridView>
     </div>
+
+        
+       
 
 
 <!--
@@ -474,8 +490,7 @@
         </div>
         </div>-->
         
-
-        
+       
 
     </form>
 </body>
