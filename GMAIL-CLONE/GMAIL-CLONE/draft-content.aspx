@@ -275,7 +275,7 @@
                 </td>
                 <td valign="middle">
                 
-                    <asp:Label ID="Label2" runat="server" CssClass="xb1"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text="Label" ></asp:Label>
                 
                 </td>
             </tr>
@@ -316,19 +316,29 @@
     </div>
    
         <div id="content">
+           <div>
+    <h2>To:</h2>
+         <asp:TextBox ID="txtToEmail" runat="server" CssClass="xb1"></asp:TextBox>
+</div>
+
             <div>
-                <h2>Title:</h2>
-                <asp:Label ID="lblTitle" runat="server" CssClass="xb1"></asp:Label>
-            </div>
-            <div>
-                <h2>Body:</h2>
-                <asp:Label ID="lblBody" runat="server" CssClass="xb1"></asp:Label>
-            </div>
-            <div>
-                <h2>Date:</h2>
-                <asp:Label ID="lblDate" runat="server" CssClass="xb1"></asp:Label>
-            </div>
-            <div>
+    <h2>Cc:</h2>
+         <asp:TextBox ID="Ccmail" runat="server" CssClass="xb1"></asp:TextBox>
+</div>
+
+<div>
+    <h2>Title:</h2>
+    <asp:TextBox ID="txtTitle" runat="server" CssClass="xb1"></asp:TextBox>
+</div>
+<div>
+    <h2>Body:</h2>
+    <asp:TextBox ID="txtBody" runat="server" CssClass="xb1" TextMode="MultiLine" Rows="4" Width="543px"></asp:TextBox>
+</div>
+<div>
+    <h2>Date:</h2>
+    <asp:TextBox ID="txtDate" runat="server" CssClass="xb1" ReadOnly="true"></asp:TextBox>
+</div>
+
                 <h2>Attachment URL:</h2>
                 <asp:HyperLink ID="hlAttachment" runat="server" CssClass="xb1"></asp:HyperLink>
             </div>
@@ -336,7 +346,7 @@
 
        <!-- Add the "Send" button here -->
     <div>
-        <asp:Button ID="btnSend" runat="server" Text="Send" CssClass="auto-style1"  Width="132px" OnClick="btnSend_Click" />
+        <asp:Button ID="btnSend" runat="server" Text="Send" CssClass="auto-style1"  Width="132px" OnClick="btnSend_Click1" />
     </div>
 
     </form>
