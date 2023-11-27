@@ -139,6 +139,7 @@ namespace GMAIL_CLONE
                     bool r = Class1.save("insert into Draft(msg_id,to_email,my_email,to_imgurl,my_imgurl,cc_email,title,body,dt) values( '" + msgId + "', '" + TextBox5.Text + "', '" + myemail + "', '" + Session["Img"].ToString() + "', '" + Image1.ImageUrl + "', '" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + TextBox3.Text + "', '" + System.DateTime.Now.ToLongDateString() + "')");
 
                     TextBox3.Text = r.ToString();
+
                     if (r)
                     {
                         Response.Write("<script>alert('Draft saved successfully')</script>");

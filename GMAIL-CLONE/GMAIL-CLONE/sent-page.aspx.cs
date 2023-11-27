@@ -108,9 +108,7 @@ namespace GMAIL_CLONE
 
 
 
-            layers.Visible = false;
-            outers.Visible = false;
-            inners.Visible = false;
+           
             if (Session["name"] != null && Session["name"].ToString() != "")
             {
               
@@ -147,23 +145,10 @@ namespace GMAIL_CLONE
                     Session["body"] = x.Tables[0].Rows[0][7].ToString();
                     Session["att_url"] = x.Tables[0].Rows[0][8].ToString();
                     Session["dt"] = x.Tables[0].Rows[0][9].ToString();
-                    layerc1.Visible = true;
-                    outerc1.Visible = true;
-                    innerc1.Visible = true;
-                    Label4.Text = Session["dt"].ToString();
-                    Label6.Text = Session["to_email"].ToString();
-                    Label7.Text = Session["my_email"].ToString();
-                    Label11.Text = Session["title"].ToString();
-                    TextBox5.Text = Session["body"].ToString();
-                    HyperLink1.NavigateUrl = Session["att_url"].ToString();
+                   
                 }
             }
-            else
-            {
-                layerc1.Visible = false;
-                outerc1.Visible = false;
-                innerc1.Visible = false;
-            }
+           
             /*  else
               {
                   Response.Redirect("~/Default2.aspx");
@@ -205,35 +190,7 @@ namespace GMAIL_CLONE
             Response.Redirect("~/log-in.aspx");
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-            string filename = FileUpload2.FileName;
-            string ex = Path.GetExtension(filename);
-            if (ex == ".jpg" || ex == ".jpeg" || ex == ".png")
-            {
-                string imgurl = "~/emailpics/" + filename;
-                string imgurl1 = "~/pics/" + filename;
-
-                Image2.ImageUrl = imgurl.ToString();
-                bool r = Class1.save("update user1 set pwd='" + TextBox8.Text + "',mob='" + TextBox9.Text + "',img='" + imgurl + "' where email='" + Session["email"].ToString() + "'");
-                bool s = Class1.save("update msg set my_imgurl='" + imgurl1 + "' where my_email='" + Session["email"].ToString() + "'");
-                bool t = Class1.save("update msg set to_imgurl='" + imgurl1 + "' where to_email='" + Session["email"].ToString() + "'");
-                if (r == true && s == true && t == true)
-                {
-                    layers.Visible = true;
-                    outers.Visible = true;
-                    inners.Visible = true;
-                    FileUpload2.PostedFile.SaveAs(Server.MapPath("~/emailpics/") + filename);
-                    FileUpload2.PostedFile.SaveAs(Server.MapPath("~/pics/") + filename);
-                    Label5.Text = "Changes saved successfully";
-                }
-                else
-                {
-                    TextBox8.Text = "";
-                    TextBox9.Text = "";
-                }
-            }
-        }
+       
 
         protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
         {

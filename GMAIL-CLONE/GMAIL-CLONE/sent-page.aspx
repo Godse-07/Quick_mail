@@ -402,7 +402,13 @@
             </ItemTemplate>
         </asp:TemplateField>
         <asp:BoundField DataField="to_email" HeaderText="To Email" />
-        <asp:BoundField DataField="title" HeaderText="Title" />
+         <asp:TemplateField HeaderText="Title">
+            <ItemTemplate>
+                <asp:HyperLink ID="TitleLink" runat="server" Text='<%# Eval("title") %>'
+                    NavigateUrl='<%# "inboxcontent.aspx?title=" + Server.UrlEncode(Eval("title").ToString()) %>' />
+            </ItemTemplate>
+        </asp:TemplateField>
+
         <asp:BoundField DataField="dt" HeaderText="Date" />
     </Columns>
             
@@ -419,57 +425,7 @@
              <AlternatingRowStyle BackColor="White" />
         </asp:GridView>
     </div>
-    <!---Layer---------->
-  <div id="layerc1" runat="server"></div>
-   <div id="outerc1" runat="server">
-    <div id="Div1" runat="server">
-       <a id="ImageButton5" href="sent.aspx"><img alt="cancel" src="cancel.png" height="20px" width="20px" /></a>
-    </div>
-    <div id="L" runat="server">
-        <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label></div>
-   <div id="innerc1" runat="server">
-     To:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label><br /><br />From:&nbsp;
-       <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label><br /><br />Title:&nbsp;&nbsp;&nbsp;
-       <asp:Label ID="Label11" runat="server" Text="Label"></asp:Label><br /><br />Content:<br />
-       &nbsp; <asp:TextBox ID="TextBox5" runat="server" ReadOnly="true" CssClass="Txtb" TextMode="MultiLine" Width="250px" Height="150px"></asp:TextBox><br /><br />
-        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# ("att_url") %>'>Attachments</asp:HyperLink>
-   </div>
-   </div>
-    <!---layer for settings--->
-       <div id="layers" runat="server"></div>
-        <div id="outers" runat="server">
-        <div id="x2" runat="server">
-       <a id="ImageButton6" href="Sent.aspx"><img alt="cancel" src="cancel.png" height="20px" width="20px" /></a>
-    </div>
-        <div id="inners" runat="server">
-        <div id="t" runat="server">
-        <table id="t1" cellspacing="4" cellpadding="4" runat="server">
-        
-            <tr><td>Password:</td>
-            <td>
-                <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox></td></tr>
-                <tr>
-                <td>Phone:</td>
-                <td>
-                    <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox></td>
-                </tr>
-                <tr>
-                <td>Photo:</td>
-                <td>
-                    <asp:Image ID="Image2" runat="server" Height="40px" Width="40px"/></td></tr>
-               
-            </table>
-            <asp:FileUpload ID="FileUpload2" runat="server" /><br /><br />
-            <div id="b">
-                <asp:Button ID="Button3" runat="server" Text="Save changes" 
-                    onclick="Button3_Click" />
-            </div><br /><br />
-             <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
-            </div>
-        </div>
-        </div>
-
+   
 
 
 
