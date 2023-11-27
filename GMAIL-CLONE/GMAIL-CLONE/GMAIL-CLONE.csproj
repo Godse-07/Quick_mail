@@ -134,6 +134,7 @@
     <Content Include="css\messsages.css" />
     <Content Include="Default.aspx" />
     <Content Include="Default2.aspx" />
+    <Content Include="draft-content.aspx" />
     <Content Include="Draft.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -255,6 +256,13 @@
     </Compile>
     <Compile Include="Default2.aspx.designer.cs">
       <DependentUpon>Default2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="draft-content.aspx.cs">
+      <DependentUpon>draft-content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="draft-content.aspx.designer.cs">
+      <DependentUpon>draft-content.aspx</DependentUpon>
     </Compile>
     <Compile Include="Draft.aspx.cs">
       <DependentUpon>Draft.aspx</DependentUpon>

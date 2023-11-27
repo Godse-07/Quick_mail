@@ -387,7 +387,12 @@
             </ItemTemplate>
         </asp:TemplateField>
         <asp:BoundField DataField="to_email" HeaderText="To Email" />
-        <asp:BoundField DataField="title" HeaderText="Title" />
+        <asp:TemplateField HeaderText="Title">
+            <ItemTemplate>
+                <asp:HyperLink ID="TitleLink" runat="server" Text='<%# Eval("title") %>'
+                    NavigateUrl='<%# "draft-content.aspx?title=" + Server.UrlEncode(Eval("title").ToString()) %>' />
+            </ItemTemplate>
+        </asp:TemplateField>
         <asp:BoundField DataField="dt" HeaderText="Date" />
     </Columns>
             
@@ -406,7 +411,12 @@
              <AlternatingRowStyle BackColor="White" /> 
           </asp:GridView>
     </div>
+
+
+
     <!---Layer---------->
+
+<!--
    <div id="layerc1" runat="server"></div>
    <div id="outerc1" runat="server">
     <div id="Div1" runat="server">
@@ -428,7 +438,10 @@
        <asp:Label ID="Label12" runat="server" Text="Label"></asp:Label>
    </div>
    </div>
+
+    -->
     <!---layer for settings--->
+        <!--
         <div id="layers" runat="server"></div>
         <div id="outers" runat="server">
         <div id="Div2" runat="server">
@@ -457,6 +470,7 @@
             </div>
         </div>
         </div>
+            -->
 
     </form>
 </body>
