@@ -125,7 +125,7 @@ namespace GMAIL_CLONE
                     // Handle the case where Session["Email"] is null or not set
                     // You can log an error, display a message to the user, or take appropriate action.
                     // For now, I'll just display an error message.
-                    Response.Write("<script>alert('Session[\"email\"] is null or not set.')</script>");
+                  //  Response.Write("<script>alert('Session[\"email\"] is null or not set.')</script>");
                     return; // Exit the method since myemail is not set
                 }
 
@@ -148,7 +148,7 @@ namespace GMAIL_CLONE
 
                 bool r = Class1.save("insert into Message(msg_id, to_email, my_email, to_imgurl, my_imgurl, cc_email, title, body, att_url, dt) values('" + msgId + "', '" + toEmail + "', '" + myemail + "', '" + Session["Img"].ToString() + "', '" + Image1.ImageUrl + "','" + Ccmail + "', '" + txtTitle.Text + "', '" + txtBody.Text + "', '" + attUrl + "', '" + System.DateTime.Now.ToLongDateString() + "')");
 
-                Response.Write("<script>alert('" + r + "')</script>");
+             //   Response.Write("<script>alert('" + r + "')</script>");
 
                 if (r == true)
                 {
@@ -160,7 +160,6 @@ namespace GMAIL_CLONE
                     Ccmail.Text = "";
                 }
             }
-
 
 
 

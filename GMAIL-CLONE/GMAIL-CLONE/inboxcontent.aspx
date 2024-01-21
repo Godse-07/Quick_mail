@@ -259,7 +259,7 @@
         
             <tr>
                 <td>
-                    <asp:Image ID="Image1" runat="server" CssClass="ix" />
+                   <a href="Default2.aspx"> <asp:Image ID="Image1" runat="server" CssClass="ix" /> </a> 
                 </td>
                 <td valign="middle">
                 
