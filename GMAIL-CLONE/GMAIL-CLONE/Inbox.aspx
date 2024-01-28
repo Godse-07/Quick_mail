@@ -7,10 +7,8 @@
     
       <title></title>
    
-    <link href="SettingsStyle.css" type="text/css" rel="Stylesheet" />
     <link href="StyleSheet.css" type="text/css" rel="Stylesheet" />
-    <link href="StyleSheet2.css" type="text/css" rel="Stylesheet" />
-    <link href="StyleSheet3.css" type="text/css" rel="Stylesheet" />
+    
     <%--<link href="SettingsStyle.css" type="text/css" rel="Stylesheet" />--%>
      <style type="text/css">
 
@@ -489,7 +487,6 @@
             </div>
         </div>
         </div>-->
-        
        
 
     </form>

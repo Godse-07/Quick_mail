@@ -7,10 +7,12 @@
     <title></title>
 
      <link href="StyleSheet.css" type="text/css" rel="Stylesheet" />
-     <link href="SettingsStyle.css" type="text/css" rel="Stylesheet" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
      <style type="text/css">
+         
+      
      
      #aboxr
      {
@@ -24,7 +26,7 @@
      {
          width:200px;
         padding:6px;
-        background-color:Black;
+        background-color: #838e83;
         border:2px solid SILVER;
         border-radius:5px;
         text-align:center;
@@ -37,7 +39,7 @@
      {
         width:200px;
         padding:6px;
-        background-color:Black;
+        background-color: #c9cebd;
         border:2px solid SILVER;
         border-radius:5px;
         text-align:center;
@@ -55,7 +57,7 @@
      {
          width:100%;
          height:100px;
-         background-color:Silver;
+         background-color:silver;
          border:1px solid GRAY;
          margin:80px auto;
      }
@@ -89,13 +91,14 @@
          width:450px;
          height:80px;
          float:right;
-         background-color:Gray;
+         background-color: gray;
          border:1px solid BLACK;
          padding-top:10px;
          border-bottom-left-radius:30px;
          border-bottom-right-radius:30px;
          box-shadow:2px 2px 2px Black;
      }
+     
      #rbx1
      {
      width:100%;
@@ -482,36 +485,7 @@
         </div>-->
 
         
-        <!---layer for settings--->
-        <div id="layers" runat="server"></div>
-        <div id="outers" runat="server">
-        <div id="x" runat="server">
-       <a id="ImageButton5" href="Default2.aspx"><img alt="cancel" height="20px" width="20px" /></a>
-    </div>
-        <div id="inners" runat="server">
-        <div id="t" runat="server">
-        <table id="t1" cellspacing="4" cellpadding="4" runat="server">
         
-            <tr><td class="style1">Password:</td>
-            <td class="style1">
-                <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox></td></tr>
-                <tr>
-                
-               
-                </tr>
-                <tr>
-                <td>Photo:</td>
-                <td>
-                    <asp:ImageButton ID="Image2" runat="server" Height="40px" Width="40px"/></td></tr>
-            </table>
-            <asp:FileUpload ID="FileUpload2" runat="server" /><br /><br />
-            <div id="b">
-                <asp:Button ID="Button3" runat="server" OnClick="Button3_Click"  Text="Save Changes"/>
-            </div><br /><br />
-             <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
-            </div>
-        </div>
-        </div>
 
 
 

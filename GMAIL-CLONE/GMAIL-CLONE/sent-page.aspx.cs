@@ -108,16 +108,14 @@ namespace GMAIL_CLONE
 
 
 
-           
+
             if (Session["name"] != null && Session["name"].ToString() != "")
             {
               
                 Label2.Text = Session["email"].ToString();
 
                 Image1.ImageUrl = Session["img"].ToString();
-                /* layerc1.Visible = false;
-                 outerc1.Visible = false;
-                 innerc1.Visible = false;*/
+                
 
 
             }
@@ -131,10 +129,12 @@ namespace GMAIL_CLONE
                 GridView1.DataSource = ds;
                 GridView1.DataBind();
             }
+
             if (Request.QueryString["msgid"] != null)
             {
                 DataSet x = Class1.fetch("select * from Message where msg_id='" + Request.QueryString["msgid"] + "'");
-                if (x.Tables[0].Rows.Count != null)
+
+                if (x.Tables[0].Rows.Count != 0)
                 {
                     Session["msg_id"] = x.Tables[0].Rows[0][0].ToString();
                     Session["to_email"] = x.Tables[0].Rows[0][1].ToString();

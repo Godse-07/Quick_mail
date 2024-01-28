@@ -18,16 +18,14 @@ namespace GMAIL_CLONE
         {
 
 
-            layers.Visible = false;
-            outers.Visible = false;
-            inners.Visible = false;
+            
             if (Session["Name"] != null && Session["Name"].ToString() != "")
              {
                 Label1.Text = Session["Email"].ToString();
 
            
 
-                Image1.ImageUrl = Session["Img"].ToString();
+                Image1.ImageUrl = Session["img"].ToString();
             }
             else
             {
@@ -73,7 +71,7 @@ namespace GMAIL_CLONE
 
             if (q.Tables[0].Rows.Count != 0)
             {
-                Session["Img"] = q.Tables[0].Rows[0][3].ToString();
+                Session["img1"] = q.Tables[0].Rows[0][3].ToString();
 
                // Response.Write("<script>alert('img get')</script>");
 
@@ -107,7 +105,7 @@ namespace GMAIL_CLONE
                     {
                         string imgurl = "~/pics/" + filename;
 
-                        bool r = Class1.save("insert into Draft(msg_id,to_email,my_email,to_imgurl,my_imgurl,cc_email,title,body,att_url,dt) values( '" + msgId + "', '" + TextBox5.Text + "', '" + myemail + "', '" + Session["Img"].ToString() + "', '" + Image1.ImageUrl + "', '" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + TextBox3.Text + "', '" + imgurl + "', '" + System.DateTime.Now.ToLongDateString() + "')");
+                        bool r = Class1.save("insert into Draft(msg_id,to_email,my_email,to_imgurl,my_imgurl,cc_email,title,body,att_url,dt) values( '" + msgId + "', '" + TextBox5.Text + "', '" + myemail + "', '" + Session["img1"].ToString() + "', '" + Image1.ImageUrl + "', '" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + TextBox3.Text + "', '" + imgurl + "', '" + System.DateTime.Now.ToLongDateString() + "')");
 
                         TextBox3.Text = r.ToString();
                         if (r)
@@ -136,7 +134,7 @@ namespace GMAIL_CLONE
                     // Handle the case where no file is uploaded
                     // You can display a message to the user or take other appropriate action.
 
-                    bool r = Class1.save("insert into Draft(msg_id,to_email,my_email,to_imgurl,my_imgurl,cc_email,title,body,dt) values( '" + msgId + "', '" + TextBox5.Text + "', '" + myemail + "', '" + Session["Img"].ToString() + "', '" + Image1.ImageUrl + "', '" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + TextBox3.Text + "', '" + System.DateTime.Now.ToLongDateString() + "')");
+                    bool r = Class1.save("insert into Draft(msg_id,to_email,my_email,to_imgurl,my_imgurl,cc_email,title,body,dt) values( '" + msgId + "', '" + TextBox5.Text + "', '" + myemail + "', '" + Session["img1"].ToString() + "', '" + Image1.ImageUrl + "', '" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + TextBox3.Text + "', '" + System.DateTime.Now.ToLongDateString() + "')");
 
                     TextBox3.Text = r.ToString();
 
@@ -188,7 +186,7 @@ namespace GMAIL_CLONE
             {
                
 
-                //Session["Img"] = x.Tables[0].Rows[0][3].ToString();
+                Session["img1"] = x.Tables[0].Rows[0][3].ToString();
 
                 string myemail = null; // Initialize myemail with a default value (e.g., null)
 
@@ -222,7 +220,7 @@ namespace GMAIL_CLONE
                     {
                         string imgurl = "~/pics/" + filename;
 
-                        bool r = Class1.save("insert into Message(msg_id,to_email,my_email,to_imgurl,my_imgurl,cc_email,title,body,att_url,dt) values( '" + msgId + "', '" + TextBox5.Text + "', '" + myemail + "', '" + Session["Img"].ToString() + "', '" + Image1.ImageUrl + "', '" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + TextBox3.Text + "', '" + imgurl + "', '" + System.DateTime.Now.ToLongDateString() + "')");
+                        bool r = Class1.save("insert into Message(msg_id,to_email,my_email,to_imgurl,my_imgurl,cc_email,title,body,att_url,dt) values( '" + msgId + "', '" + TextBox5.Text + "', '" + myemail + "', '" + Session["img1"].ToString() + "', '" + Image1.ImageUrl + "', '" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + TextBox3.Text + "', '" + imgurl + "', '" + System.DateTime.Now.ToLongDateString() + "')");
 
                         // Response.Write("<script>alert('save execute')</script>");
 
@@ -248,9 +246,8 @@ namespace GMAIL_CLONE
                     // Handle the case where no file is uploaded
                     // You can display a message to the user or take other appropriate action.
 
-                    bool r = Class1.save("insert into Message(msg_id,to_email,my_email,to_imgurl,my_imgurl,cc_email,title,body,dt) values( '" + msgId + "', '" + TextBox5.Text + "', '" + myemail + "', '" + Session["Img"].ToString() + "', '" + Image1.ImageUrl + "', '" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + TextBox3.Text + "', '" + System.DateTime.Now.ToLongDateString() + "')");
-
-                    TextBox3.Text = r.ToString();
+                    bool r = Class1.save("insert into Message(msg_id,to_email,my_email,to_imgurl,my_imgurl,cc_email,title,body,dt) values( '" + msgId + "', '" + TextBox5.Text + "', '" + myemail + "', '" + Session["img1"].ToString() + "', '" + Image1.ImageUrl + "', '" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + TextBox3.Text + "', '" + System.DateTime.Now.ToLongDateString() + "')");
+                    //TextBox3.Text = r.ToString();
                     if (r == true)
                     {
                         Response.Write("<script>alert('SUCCESSFULLY')</script>");
@@ -267,39 +264,7 @@ namespace GMAIL_CLONE
 
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-            string filename = FileUpload2.FileName;
-            string ex = Path.GetExtension(filename);
-            if (ex == ".jpg" || ex == ".jpeg" || ex == ".png")
-            {
-                string imgurl = "~/emailpics/" + filename;
-                string imgurl1 = "~/pics/" + filename;
-
-                Image2.ImageUrl = imgurl.ToString();
-
-                Session["img"] = imgurl.ToString();
-                bool r = Class1.save("update user-det set pwd='" + "',img='" + imgurl + "' where email='" + Session["email"].ToString() + "'");
-                bool s = Class1.save("update msg set my_imgurl='" + imgurl1 + "' where my_email='" + Session["email"].ToString() + "'");
-                bool t = Class1.save("update msg set to_imgurl='" + imgurl1 + "' where to_email='" + Session["email"].ToString() + "'");
-                if (r == true && s == true && t == true)
-                {
-                    layers.Visible = true;
-                    outers.Visible = true;
-                    inners.Visible = true;
-                    FileUpload2.PostedFile.SaveAs(Server.MapPath("~/emailpics/") + filename);
-                    FileUpload2.PostedFile.SaveAs(Server.MapPath("~/pics/") + filename);
-                    string imgurl_n = "~/emailpics/" + filename;
-
-                }
-                else
-                {
-                    TextBox8.Text = "";
-                }
-
-            }
-            Response.Redirect("~/Default2.aspx?");
-        }
+       
 
         protected void ImageButton6_Click(object sender, ImageClickEventArgs e)
         {

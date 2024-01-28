@@ -18,9 +18,7 @@ namespace GMAIL_CLONE
 
 
 
-            layers.Visible = false;
-            outers.Visible = false;
-            inners.Visible = false;
+           
             if (Session["name"] != null && Session["name"].ToString() != "")
             {
 
@@ -67,12 +65,7 @@ namespace GMAIL_CLONE
                     HyperLink1.NavigateUrl = Session["atturl"].ToString();
                 }
             }
-            else
-            {
-                layerc1.Visible = false;
-                outerc1.Visible = false;
-                innerc1.Visible = false;
-            }
+            
 
 
 
@@ -155,7 +148,10 @@ namespace GMAIL_CLONE
             }
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
+
+
+
+       protected void Button3_Click(object sender, EventArgs e)
         {
             string filename = FileUpload2.FileName;
             string ex = Path.GetExtension(filename);

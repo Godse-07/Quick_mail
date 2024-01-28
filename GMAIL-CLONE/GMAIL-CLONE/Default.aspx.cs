@@ -62,20 +62,7 @@ namespace Gmail_clone
             Response.Redirect("~/log-in.aspx");
         }
 
-        //protected void Button2_Click(object sender, EventArgs e)
-        //{
-        //    DataSet x = Class1.fetch("select * from user_det where name='" + TextBox1.Text + "'");
-        //    if (x != null && x.Tables.Count > 0 && x.Tables[0].Rows.Count > 0)
-        //    {
-        //        TextBox2.Text = x.Tables[0].Rows[0][1].ToString();
-
-        //        TextBox3.Text = x.Tables[0].Rows[0][2].ToString();
-        //    }
-
-        //    Response.Redirect("~/Default2.aspx");
-
-
-        //}
+     
 
     }
 }

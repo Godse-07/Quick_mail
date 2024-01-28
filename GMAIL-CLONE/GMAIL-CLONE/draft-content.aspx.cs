@@ -109,6 +109,8 @@ namespace GMAIL_CLONE
                 // Retrieve the email address from the TextBox
                 string toEmail = txtToEmail.Text;
 
+                Session["img1"] = x.Tables[0].Rows[0][3].ToString();
+
                 //Response.Write("<script>alert('" + toEmail + "')</script>");
 
                 // Initialize myemail with a default value (e.g., null)
@@ -146,7 +148,7 @@ namespace GMAIL_CLONE
                // Response.Write("<script>alert('" + attUrl + "')</script>");
 
 
-                bool r = Class1.save("insert into Message(msg_id, to_email, my_email, to_imgurl, my_imgurl, cc_email, title, body, att_url, dt) values('" + msgId + "', '" + toEmail + "', '" + myemail + "', '" + Session["Img"].ToString() + "', '" + Image1.ImageUrl + "','" + Ccmail + "', '" + txtTitle.Text + "', '" + txtBody.Text + "', '" + attUrl + "', '" + System.DateTime.Now.ToLongDateString() + "')");
+                bool r = Class1.save("insert into Message(msg_id, to_email, my_email, to_imgurl, my_imgurl, cc_email, title, body, att_url, dt) values('" + msgId + "', '" + toEmail + "', '" + myemail + "', '" + Session["img1"].ToString() + "', '" + Image1.ImageUrl + "','" + Ccmail + "', '" + txtTitle.Text + "', '" + txtBody.Text + "', '" + attUrl + "', '" + System.DateTime.Now.ToLongDateString() + "')");
 
              //   Response.Write("<script>alert('" + r + "')</script>");
 
@@ -162,6 +164,7 @@ namespace GMAIL_CLONE
             }
 
 
+           
 
 
 

@@ -25,7 +25,7 @@ namespace GMAIL_CLONE
 
 
 
-                Image1.ImageUrl = Session["Img"].ToString();
+                Image1.ImageUrl = Session["img"].ToString();
             }
             else
             {
