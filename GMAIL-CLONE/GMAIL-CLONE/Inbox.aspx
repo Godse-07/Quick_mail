@@ -397,7 +397,7 @@
              <Columns>
         <asp:TemplateField HeaderText="Image">
             <ItemTemplate>
-                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("to_imgurl") %>' Width="100" Height="100" />
+                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("my_imgurl") %>' Width="100" Height="100" />
             </ItemTemplate>
         </asp:TemplateField>
         <asp:BoundField DataField="my_email" HeaderText="Email id" />
